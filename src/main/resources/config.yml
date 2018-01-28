@@ -1,0 +1,362 @@
+#             #############################################################################################
+#             ############################### THANK YOU FOR USING #########################################
+#             ############################ EasyAntiInsult BY LUC1412 ######################################
+#             #############################################################################################
+#             ################################### MAIN CONFIG #############################################
+#             #############################################################################################
+#
+# If you enabled this, you get an message if a new version of this plugin is available
+Updater: true
+#
+DebugLog: false
+#
+# Here you can change the style of the Prefix. There are 5 Styles available. Use the numbers 1 to 5 to change them!
+# 1 = "§8|§1Easy§5Anti§dInsult§8| §3§l->§r "
+# 2 = "§7[§1Easy§5Anti§dInsult§7]§r "
+# 3 = "§7(§1Easy§5Anti§dInsult§7)§r "
+# 4 = "§2§l【§1Easy§5Anti§dInsult§l§2§l】§r "
+# 5 = Custom Prefix (ONLY FOR DONATOR!) -> The Custom prefix can be set in the Donator Config!
+PrefixStyle: 4
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################            CHAT CLEAR          #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+ChatClear:
+  #
+  # How many rows will be cleared?
+  ClearedRows: 50
+  #
+  # Wich message will be displayed at least?
+  #TODO: GRAMMA
+  # If you let it empty, there will now message displayed!
+  # %name% will be replaced with the name of the player wich perform the Chat-Clear command
+  EndRow: '&5&l&k-------&5[Chat cleared by %playername%&5]&5&l&k-------'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################         ANTI ADVERTISE         #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+AntiAdvertise:
+  #
+  # If you enable this all .de, .eu, .com, .org, .net, .tk, .ml, .ga, .cf, .gp, .at, .ch, .me, .us and .tv domains will be blocked!
+  # You can whitelist trusted Domains in the "WhitelistedURLs.yml"! All other will be detected!
+  Enabled: true
+  #
+  # Enable punishment to punish the Player.
+  # The Punishment commands will be performed successively. For example the player advertise the first time, the first command will be performed...
+  Punishment:
+    Enabled: false
+    PunishmentCommands:
+    - First Punishment Command
+    - Second Punishment Command
+    - Third Punishment Command
+  #
+  # Block the message of the player
+  Blocking: true
+  Notify:
+  # Notify all Team-Member with the "eai.team" permission
+    NotifyTeamMember:
+      Enabled: true
+      Message: '&4&l%player% was advertising!'
+    # Currently N/A
+    Logging:
+      Enabled: true
+    # Send the player who advertise a message
+    ChatMessage:
+      Enabled: true
+      Message: '&4&lYou are not allowed to advertise!'
+    # Send the player who advertise a title
+    Title:
+      Enabled: true
+      FadeInTime: 20
+      StayTime: 20
+      FadeOutTime: 20
+      Title: '&4!Forbidden!'
+      SubTitle: '&cYou are not allowed to advertise!'
+    # Send the player who advertise a message in the actionbar
+    ActionBar:
+      Enabled: true
+      Message: '&cYou are not allowed to advertise!'
+    # Play a sound to the player who advertise
+    Sound:
+      Enabled: true
+      SoundName: BLOCK_NOTE_PLING:0.1
+    # Damage the player who advertise. Use a high damage amount to kill the player
+    DamagePlayer:
+      Enabled: true
+      DamageAmount: 2.0
+    # Kick the player who advertise
+    KickPlayer:
+      Enabled: false
+      KickMessage: '&4&lPlease dont advertise!'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################         ANTI CAPS LOCK         #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+AntiCapsLock:
+  # If you enable this caps will be blocked if the player write x percent in caps.
+  # If the Player only write one word, the caps will be not detected for security reasons. Better solution comming soon.
+  Enabled: true
+  # How many percent of caps can the player use?
+  # "hello world" <- This are 0 percent
+  # "HELLO WORLD" <- This are 100 percent
+  MaxCapsPercent: 40
+  Punishment:
+    #
+    # Enable punishment to punish the Player.
+    # The Punishment commands will be performed successively. For example the player advertise the first time, the first command will be performed...
+    Enabled: false
+    PunishmentCommands:
+    - First Punishment Command
+    - Second Punishment Command
+    - Third Punishment Command
+  #
+  # Block the message of the player
+  Blocking: true
+  Notify:
+  # Notify all Team-Member with the "eai.team" permission
+    NotifyTeamMember:
+      Enabled: true
+      Message: '&4&l%player% used caps!'
+    # Currently N/A
+    Logging:
+      Enabled: true
+    # Send the player who use caps a message
+    ChatMessage:
+      Enabled: true
+      Message: '&4&lYou are not allowed to caps!'
+    # Send the player who advertise a title
+    Title:
+      Enabled: true
+      FadeInTime: 20
+      StayTime: 20
+      FadeOutTime: 20
+      Title: '&4!Forbidden!'
+      SubTitle: '&cYou are not allowed to caps!'
+    # Send the player who use caps a message in the actionbar
+    ActionBar:
+      Enabled: true
+      Message: '&cYou are not allowed to use caps!'
+    # Play a sound to the player who use caps
+    Sound:
+      Enabled: true
+      SoundName: BLOCK_NOTE_PLING:0.1
+    # Damage the player who use caps. Use a high damage amount to kill the player
+    DamagePlayer:
+      Enabled: true
+      DamageAmount: 2.0
+    # Kick the player who use caps
+    KickPlayer:
+      Enabled: false
+      KickMessage: '&4&lPlease dont use caps!'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################          ANTI INSULT           #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+
+AntiInsult:
+  # Block or
+  Enabled: true
+  Mode: DATABASE/REPLACE/CUSTOM
+  DatabaseMode:
+    UseGermanDatabase: true
+    UseEnglishUSDatabase: true
+    UseSpanishDatabase: true
+    UseFrenchDatabase: true
+  UseCustomInsults: true
+  Punishment:
+    Enabled: false
+    PunishmentCommands:
+    - First Punishment Command
+    - Second Punishment Command
+    - Third Punishment Command
+  Blocking: true
+  Notify:
+    NotifyTeamMember:
+      Enabled: true
+      Message: '&4&l%player% use insults!'
+    Logging:
+      Enabled: true
+    ChatMessage:
+      Enabled: true
+      Message: '&4&lYou are not allowed to use insults!'
+    Title:
+      Enabled: true
+      FadeInTime: 20
+      StayTime: 20
+      FadeOutTime: 20
+      Title: '&4!Forbidden!'
+      SubTitle: '&cYou are not allowed to use insults!'
+    ActionBar:
+      Enabled: true
+      Message: '&cYou are not allowed to use insults!'
+    Sound:
+      Enabled: true
+      SoundName: BLOCK_NOTE_PLING:0.1
+    DamagePlayer:
+      Enabled: true
+      DamageAmount: 2.0
+    KickPlayer:
+      Enabled: false
+      KickMessage: '&4&lPlease dont use insults!'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################           ANTI SPAM            #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+
+AntiSpam:
+  Enabled: true
+  Punishment:
+      Enabled: false
+      PunishmentCommands:
+      - First Punishment Command
+      - Second Punishment Command
+      - Third Punishment Command
+  Blocking: true
+  Notify:
+    NotifyTeamMember:
+      Enabled: true
+      Message: '&4&l%player% was spamming!'
+    Logging:
+      Enabled: true
+    ChatMessage:
+      Enabled: true
+      Message: '&4&lYou are not allowed to spam!'
+    Title:
+      Enabled: true
+      FadeInTime: 20
+      StayTime: 20
+      FadeOutTime: 20
+      Title: '&4!Forbidden!'
+      SubTitle: '&cYou are not allowed to spam!'
+    ActionBar:
+      Enabled: true
+      Message: '&cYou are not allowed to spam!'
+    Sound:
+      Enabled: true
+      SoundName: BLOCK_NOTE_PLING:0.1
+    DamagePlayer:
+      Enabled: true
+      DamageAmount: 2.0
+    KickPlayer:
+      Enabled: false
+      KickMessage: '&4&lPlease dont spam!'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################          ANTI UNICODE          #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+AntiUnicode:
+  # TODO: LINK LANGUAGE
+  # If you enable this, chars some chars of the unicode will be blocked. https://en.m.wikipedia.org/wiki/Unicode
+  # The alphabet (A-Z) and all numbers are whitelisted
+  Enabled: true
+  # Allow some Char Groups
+  Allowed:
+    # Allowed Chars: ÜÖÄß (Umlaut is a mark used over a vowel, as in German or Hungarian, to indicate a different vowel quality, usually fronting or roundinge)
+    AllowUmlauts: true
+    # Allowed Chars: {}[]()
+    AllowBrackets: true
+    # Allowed Chars: €$¢£¥%
+    AllowUnits: true
+    # Allowed Chars: !?,.;:_"&\`´'
+    AllowPunctuationMarks: true
+    # Allowed Chars: +-*/<>~=
+    AllowMathChars: true
+    # Allowed Chars: ø±×÷ƒºµ¼½¾¹²³‰
+    AllowMathSpecialChars: true
+    # Allowed Chars: ñÑáÁéÉíÍóÓúÚ¿¡
+    AllowSpanishChars: true
+    # Allowed Chars: àÀâÂæÆçÇèÈéÉêÊëËîÎïÏôÔœŒùÙûÛÿŸ»«
+    AllowFrenchChars: true
+    # Allow Custom Chars
+    AllowCustomChars:
+      Enabled: true
+      Chars:
+      - §
+      - |
+  #
+  Punishment:
+    #
+    # Enable punishment to punish the Player.
+    # The Punishment commands will be performed successively. For example the player advertise the first time, the first command will be performed...
+    Enabled: false
+    PunishmentCommands:
+    - First Punishment Command
+    - Second Punishment Command
+    - Third Punishment Command
+  #
+  # Block the message of the player
+  Blocking: true
+  Notify:
+  # Notify all Team-Member with the "eai.team" permission
+    NotifyTeamMember:
+      Enabled: true
+      Message: '&4&l%player% used Unicode chars!'
+    # Currently N/A
+    Logging:
+      Enabled: true
+    # Send the player who use unicode a message
+    ChatMessage:
+      Enabled: true
+      Message: '&4&lYou are not allowed to use Unicode chars!'
+    # Send the player who use Unicode chars a title
+    Title:
+      Enabled: true
+      FadeInTime: 20
+      StayTime: 20
+      FadeOutTime: 20
+      Title: '&4!Forbidden!'
+      SubTitle: '&cYou are not allowed to use Unicode chars!'
+    # Send the player who use caps a message in the actionbar
+    ActionBar:
+      Enabled: true
+      Message: '&cYou are not allowed to use caps!'
+    # Play a sound to the player who use caps
+    Sound:
+      Enabled: true
+      SoundName: BLOCK_NOTE_PLING:0.1
+    # Damage the player who use caps. Use a high damage amount to kill the player
+    DamagePlayer:
+      Enabled: true
+      DamageAmount: 2.0
+    # Kick the player who use caps
+    KickPlayer:
+      Enabled: false
+      KickMessage: '&4&lPlease dont use caps!'
+#
+#                                    ########################################
+#                                    ###                                  ###
+# #######################################          DATA SAVING           #######################################
+#                                    ###                                  ###
+#                                    ########################################
+#
+DataSaving:
+  # Save the stats of a player if he make a offense
+  Enabled: true
+  # Wich mode do you want?
+  # Use "FILE" if you want so save the stats local on a file
+  # Use "MYSQL" if you want to save the stats in a MySQL database. Please fill the Host, Port, Database, Username and Password below
+  Mode: MYSQL/FILE
+  MySQLMode:
+    Host: 127.0.0.1
+    Port: 22
+    Database: EasyAntiInsult
+    Username: Luc1412
+    Password: Luc1412IsTheBestDev;)

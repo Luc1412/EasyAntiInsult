@@ -1,0 +1,8 @@
+main: de.luc1412.eai.EasyAntiInsult
+name: EasyAntiInsult
+version: 0.1.0
+author: Luc1412
+description: The easy and modern anti insult solution
+commands:
+   easyantiinsult:
+      aliases: [eai,antiinsult]
